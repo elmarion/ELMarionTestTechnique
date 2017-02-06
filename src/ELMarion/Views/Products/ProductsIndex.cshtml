@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ELMarion.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductSKU)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductSKU)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+                </td>
+                <td>
+                    <button class="snipcart-add-item"
+                            data-item-id=@Html.DisplayFor(modelItem => item.ProductID)
+                            data-item-name=@Html.DisplayFor(modelItem => item.ProductName)
+                            data-item-price=@Html.DisplayFor(modelItem => item.ProductPrice)
+                            data-item-weight=@Html.DisplayFor(modelItem => item.ProductSKU)
+                            data-item-url="http://myapp.com/products/bacon"
+                            >
+                        Buy @Html.DisplayFor(modelItem => item.ProductName)
+
+                    </button>
+               </td>
+            </tr>
+        }
+    </tbody>
+</table>

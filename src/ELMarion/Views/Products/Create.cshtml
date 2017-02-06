@@ -1,0 +1,48 @@
+﻿@model ELMarion.Models.ProductAddView
+
+@{
+    ViewData["Title"] = "Add a Product";
+}
+
+<h2>Add a Product</h2>
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-horizontal">
+        <r />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ProductName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductPrice" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductSKU" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ProductSKU" class="form-control" />
+                <span asp-validation-for="ProductSKU" class="text-danger" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="ProductsIndex">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

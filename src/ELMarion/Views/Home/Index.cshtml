@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <h1>How you can DIY</h1>
+
+    <h2>Understand MVC</h2>
+    <p>We need to start somewhere. In Model-View-Controller pattern, the model
+    manages the data. The view is your physical web page and the controller is 
+    the conductor of your website. </p>
+
+    <h2>Creating your project</h2>
+    <p>First, let’s create a new ASP.NET Core project with Visual Studio 2015 with
+     at least the update 3 with ASP.NET Core. Choose Web application without authentication.</p>
+
+    <p>Once it’s done, you should have already a functional website. You can change every details.
+     First, open Views/Shared/_Layout.cshtml. Here you can find every things that are shared between
+     your pages (Head, Header, Menu, Footer, etc.).</p>
+
+    <p>Because we’ll need to use a database, we should add Microsoft.EntityFrameworkCore.Tool.
+     Run the following command in the Package Manager Console:
+    <code>Install-Package Microsoft.EntityFrameworkCore.Tools -version 1.0.0-preview2-final -Pre</code></p>
+    
+    <h2>Database</h2>
+    <p>For implement the database you can follow this
+     <a href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro">ASP.NET Core documentation</a>.</p>
+    
+    <h2>Controller</h2>
+    <p>The big part of this project is the "ProductController".  All your views need the controller to be
+     functional. So, for each view you’ll create a method that returns a view. If your view interact
+     with the database, you should have two methods : first, a method that returns a view and second, a 
+    method that validates and saves your database changes.</p>
+    
+    <p>For example :
+    <pre><code class="language-asp.net">
+    public IActionResult Create()
+    {
+        var m = new ProductAddView();
+            
+        return View(m);
+    }
+
+    [HttpPost]
+    public ActionResult Create(ProductAddView nProduct)
+    {
+        if (ModelState.IsValid)
+        {
+            Product tProduct = new Product();
+            tProduct.ProductName = nProduct.ProductName;
+            tProduct.ProductPrice = nProduct.ProductPrice;
+            tProduct.ProductSKU = nProduct.ProductSKU;
+            _context.Add(tProduct);
+            _context.SaveChanges();
+            return RedirectToAction("ProductsIndex");
+        }
+        else
+        {
+            return View(nProduct);
+        }
+    }
+        
+        </code></pre></p>
+
+    <h2>Snipcart</h2>
+    <p>Clearly Snipcart is the highlight of this project. All you need to know is where to put four lines.
+     It’s magical! <a href="https://docs.snipcart.com/getting-started/installation">Here Snipcart's documentation</a>.</p>
+
+
+
+
+    
+    
+</div>

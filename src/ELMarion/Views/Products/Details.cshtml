@@ -1,0 +1,51 @@
+﻿@model ELMarion.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @*<h4>Product Name</h4>*@
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSKU)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductSKU)
+        </dd>
+        <dd>
+            <button class="snipcart-add-item"
+                    data-item-id=@Html.DisplayFor(model => model.ProductID)
+                    data-item-name=@Html.DisplayFor(model => model.ProductName)
+                    data-item-price=@Html.DisplayFor(model => model.ProductPrice)
+                    data-item-weight=@Html.DisplayFor(model => model.ProductSKU)
+                    data-item-url="http://myapp.com/products/bacon">
+                Buy @Html.DisplayFor(model => model.ProductName)
+
+            </button>
+        </dd>
+    </dl>
+</div>
+
+<div>
+
+    <a asp-action="Edit" asp-route-id="@Model.ProductID">Edit</a>
+
+    <a asp-action="ProductsIndex">Back</a>
+</div>
