@@ -42,18 +42,18 @@
                     <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
                 </td>
-                <td>
+                @*<td>
                     <button class="snipcart-add-item"
                             data-item-id=@Html.DisplayFor(modelItem => item.ProductID)
                             data-item-name=@Html.DisplayFor(modelItem => item.ProductName)
                             data-item-price=@Html.DisplayFor(modelItem => item.ProductPrice)
                             data-item-weight=@Html.DisplayFor(modelItem => item.ProductSKU)
-                            data-item-url= @Context.Request.Host@Context.Request.Path
+                            data-item-url= "../Details/@Html.DisplayFor(modelItem => item.ProductID)"
                             >
                         Buy @Html.DisplayFor(modelItem => item.ProductName)
 
                     </button>
-               </td>
+               </td>*@
             </tr>
         }
     </tbody>
