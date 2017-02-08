@@ -48,7 +48,7 @@
                             data-item-name=@Html.DisplayFor(modelItem => item.ProductName)
                             data-item-price=@Html.DisplayFor(modelItem => item.ProductPrice)
                             data-item-weight=@Html.DisplayFor(modelItem => item.ProductSKU)
-                            data-item-url="http://myapp.com/products/bacon"
+                            data-item-url= @Context.Request.Host@Context.Request.Path
                             >
                         Buy @Html.DisplayFor(modelItem => item.ProductName)
 
