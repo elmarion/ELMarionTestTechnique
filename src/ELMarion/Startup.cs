@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ELMarion.Data;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.Models;
+using ELMarion.Models;
 
 namespace ELMarion
 {

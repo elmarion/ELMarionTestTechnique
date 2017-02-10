@@ -150,5 +150,152 @@ namespace ELMarion.Controllers
             return _context.Products.Any(e => e.ProductID == id);
         }
 
+
+        //private IProductRepository repository;
+
+        //public ProductsController()
+        //{
+        //    this.repository = new EF_ProductRepository();
+        //}
+
+        ////public ProductsController(IProductRepository repo)
+        ////{
+        ////    this.repository = repo;
+        ////}
+
+        //// GET: List Product
+        //public ViewResult ProductsIndex()
+        //{
+        //    var products = repository.GetAllProducts();
+        //    return View(products);
+        //}
+
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var products = repository.GetAllProducts();
+        //    var tProduct = products.Where(p => p.ProductID == id).Single();
+
+        //    if (tProduct == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(tProduct);
+        //}
+
+        ////GET
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var products = repository.GetAllProducts();
+        //    var tProduct = products.Where(p => p.ProductID == id).Single();
+
+        //    if (tProduct == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(tProduct);
+
+        //}
+
+        //// POST: Product/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var products = repository.GetAllProducts();
+        //    var tProduct = products.Where(p => p.ProductID == id).Single();
+        //    repository.RemoveProduct(tProduct);
+        //    repository.SaveChanges();
+
+        //    return RedirectToAction("ProductsIndex");
+        //}
+
+        //[HttpPost]
+        //public ActionResult Create(ProductAddView nProduct)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Product tProduct = new Product();
+        //        tProduct.ProductName = nProduct.ProductName;
+        //        tProduct.ProductPrice = nProduct.ProductPrice;
+        //        tProduct.ProductSKU = nProduct.ProductSKU;
+        //        repository.CreateProduct(tProduct);
+        //        repository.SaveChanges();
+
+        //        return RedirectToAction("ProductsIndex");
+        //    }
+        //    else
+        //    {
+        //        return View(nProduct);
+        //    }
+        //}
+
+        ////GET
+        //public IActionResult Create()
+        //{
+        //    var m = new ProductAddView();
+
+        //    return View(m);
+        //}
+
+        //// GET: /Product/Edit/5
+
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var products = repository.GetAllProducts();
+        //    var tProduct = products.Where(p => p.ProductID == id).Single();
+
+        //    if (tProduct == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(tProduct);
+        //}
+
+        ////
+        //// POST: 
+
+        //[HttpPost]
+        //public ActionResult Edit(int id, Product eProduct)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var products = repository.GetAllProducts();
+        //        var tProduct = products.Where(p => p.ProductID == id).Single();
+
+
+        //        tProduct.ProductName = eProduct.ProductName;
+        //        tProduct.ProductPrice = eProduct.ProductPrice;
+        //        tProduct.ProductSKU = eProduct.ProductSKU;
+        //        repository.UpdateProduct(tProduct);
+        //        repository.SaveChanges();
+
+        //        return RedirectToAction("ProductsIndex");
+        //    }
+        //    else
+        //    {
+        //        return View(eProduct);
+        //    }
+
+
+        //}
+
+        //private bool ProductExists(int id)
+        //{
+        //    var products = repository.GetAllProducts();
+        //    return products.Any(e => e.ProductID == id);
+        //}
     }
 }

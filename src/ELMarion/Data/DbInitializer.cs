@@ -4,9 +4,8 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ELMarion.Data;
-using ELMarion.Models;
 
-namespace ContosoUniversity.Models
+namespace ELMarion.Models
 {
     public static class DbInitializer
     {

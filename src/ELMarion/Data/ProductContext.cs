@@ -5,6 +5,9 @@ namespace ELMarion.Data
 {
     public class ProductContext : DbContext
     {
+        //public ProductContext() : base("TestTechELM") 
+        //{
+        //}
         public ProductContext(DbContextOptions<ProductContext> options) : base(options)
         {
         }
